@@ -1,0 +1,31 @@
+text,source,type,date
+"Le capteur NT-200 mesure la température et l'humidité. En cas de défaillance, il renvoie le code d'erreur E-4012 qui indique une perte de connexion au hub central.",doc_produit.pdf,documentation,2026-01-10
+Le code d'erreur E-4013 signale une batterie faible sur le capteur NT-200. Remplacer la pile CR2450 et redémarrer via le bouton reset.,doc_produit.pdf,documentation,2026-01-10
+Le code d'erreur E-5001 concerne uniquement le hub NovaHub Pro : il indique un échec de mise à jour du firmware. Réinstaller la version 3.2.1 depuis l'application.,doc_produit.pdf,documentation,2026-02-03
+La passerelle NovaHub Pro supporte jusqu'à 64 capteurs simultanés. Le protocole utilisé est Zigbee 3.0 avec chiffrement AES-128.,doc_produit.pdf,documentation,2026-01-10
+"Pour réinitialiser un capteur NT-200 : maintenir le bouton reset 10 secondes jusqu'au clignotement bleu, puis relancer l'appairage depuis l'application NovaTech Home.",doc_produit.pdf,documentation,2026-01-10
+"L'abonnement NovaCloud Premium coûte 9,99 euros par mois et inclut l'historique des mesures sur 24 mois, contre 30 jours pour l'offre gratuite.",grille_tarifaire.xlsx,commercial,2026-03-01
+La garantie constructeur des capteurs NT-200 est de 2 ans. Elle est étendue à 3 ans pour les clients NovaCloud Premium.,cgv.pdf,juridique,2026-03-01
+"NovaTech possède trois filiales européennes : NovaTech GmbH à Munich (Allemagne), NovaTech Iberia à Madrid (Espagne) et NovaTech France à Lyon.",organigramme.docx,interne,2025-11-15
+La filiale allemande NovaTech GmbH est dirigée par Klaus Werner depuis mars 2024. Elle emploie 45 personnes et gère la production des capteurs.,organigramme.docx,interne,2025-11-15
+"NovaTech Iberia, la filiale espagnole, est dirigée par Carmen Ruiz. Elle est responsable de la distribution pour l'Europe du Sud.",organigramme.docx,interne,2025-11-15
+"Le principal fournisseur de composants électroniques de NovaTech GmbH est la société Elektra Bauteile, basée à Stuttgart.",contrats_fournisseurs.xlsx,achats,2025-12-01
+Elektra Bauteile a signé en janvier 2026 un contrat de client avec NovaTech Iberia pour équiper ses entrepôts de Madrid en capteurs NT-200.,crm_export.csv,commercial,2026-01-20
+"Le second fournisseur de NovaTech GmbH est PolymerTech, qui livre les boîtiers plastiques des capteurs depuis son usine de Dresde.",contrats_fournisseurs.xlsx,achats,2025-12-01
+"Marie Dubois, directrice de NovaTech France, a rencontré Klaus Werner le 12 février 2026 à Munich pour négocier le transfert d'une ligne de production vers Lyon.",compte_rendu_reunion.docx,interne,2026-02-13
+"Lors du salon IoT World de Barcelone en mars 2026, Carmen Ruiz a présenté le partenariat entre NovaTech Iberia et le distributeur ibérique SmartCasa.",communique_presse.pdf,communication,2026-03-18
+"SmartCasa est également revendeur des produits du concurrent direct de NovaTech, la société HomeSense, ce qui a créé des tensions contractuelles.",note_strategique.docx,interne,2026-04-02
+"Conformément à l'article L.1235-3 du Code du travail, le barème d'indemnités pour licenciement sans cause réelle et sérieuse s'applique aux contentieux prud'homaux de la filiale française.",note_juridique.docx,juridique,2026-01-05
+"L'accord de télétravail de NovaTech France prévoit 3 jours de télétravail par semaine, conformément à l'accord d'entreprise signé le 15 septembre 2025.",accord_teletravail.pdf,RH,2025-09-15
+Le comité social et économique (CSE) de NovaTech France a été renouvelé en octobre 2025. Julien Petit en est le secrétaire.,pv_elections_cse.pdf,RH,2025-10-20
+Incident majeur du 5 mars 2026 : une panne du serveur NovaCloud a rendu l'historique des mesures inaccessible pendant 6 heures pour tous les clients européens.,postmortem_incident.md,technique,2026-03-07
+L'analyse post-mortem de l'incident du 5 mars 2026 attribue la panne à une mise à jour défectueuse déployée par l'équipe infrastructure dirigée par Sofia Lindgren.,postmortem_incident.md,technique,2026-03-07
+Sofia Lindgren dirige l'équipe infrastructure de NovaTech depuis Stockholm. Son équipe gère les serveurs NovaCloud hébergés chez le prestataire Nordic Datacenters.,organigramme.docx,interne,2025-11-15
+"Nordic Datacenters, prestataire d'hébergement de NovaTech, a annoncé en avril 2026 la migration de ses centres de données vers une alimentation 100% renouvelable.",veille_fournisseurs.md,achats,2026-04-10
+"Suite à l'incident du 5 mars, un geste commercial de 2 mois d'abonnement NovaCloud Premium offerts a été accordé aux clients ayant ouvert un ticket.",note_support.docx,commercial,2026-03-10
+"La stratégie développement durable de NovaTech vise la neutralité carbone en 2030 : écoconception des capteurs, recyclage des piles et allongement de la durée de vie des produits.",rapport_rse.pdf,communication,2026-02-01
+"Les ventes de capteurs connectés pour la maison intelligente ont progressé de 23% en Europe en 2025, portées par les préoccupations d'économies d'énergie.",etude_marche.pdf,commercial,2026-01-15
+"Les clients citent en priorité la simplicité d'installation et la fiabilité des mesures comme critères d'achat d'un capteur domestique, devant le prix.",enquete_satisfaction.pdf,commercial,2025-12-10
+Le chauffage représente environ 60% de la consommation énergétique d'un logement ; un pilotage par capteurs de température peut réduire la facture de 15%.,livre_blanc_energie.pdf,communication,2025-11-01
+"La roadmap produit 2026 prévoit le lancement du capteur NT-300 avec détection de qualité de l'air (CO2, COV) au quatrième trimestre.",roadmap_2026.pptx,interne,2026-01-08
+"Le concurrent HomeSense a lancé en février 2026 un capteur de qualité de l'air à 39 euros, soit 20 euros de moins que le prix cible du futur NT-300.",veille_concurrentielle.md,interne,2026-02-20
