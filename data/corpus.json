@@ -1,0 +1,98 @@
+[
+  {
+    "id": "L3121-27",
+    "num_article": "L3121-27",
+    "titre_section": "Durée légale du travail",
+    "theme": "duree_travail",
+    "texte": "La durée légale de travail effectif des salariés à temps complet est fixée à trente-cinq heures par semaine.",
+    "source": "Code du travail, partie législative - À VÉRIFIER sur legifrance.gouv.fr"
+  },
+  {
+    "id": "L3121-28",
+    "num_article": "L3121-28",
+    "titre_section": "Heures supplémentaires",
+    "theme": "duree_travail",
+    "texte": "Toute heure de travail effectuée au-delà de la durée légale hebdomadaire est une heure supplémentaire qui ouvre droit à une majoration salariale ou, le cas échéant, à un repos compensateur équivalent.",
+    "source": "Code du travail, partie législative - À VÉRIFIER sur legifrance.gouv.fr"
+  },
+  {
+    "id": "L3141-3",
+    "num_article": "L3141-3",
+    "titre_section": "Congés payés",
+    "theme": "conges_payes",
+    "texte": "Le salarié a droit à un congé de deux jours et demi ouvrables par mois de travail effectif chez le même employeur, sans que la durée totale du congé exigible puisse excéder trente jours ouvrables.",
+    "source": "Code du travail, partie législative - À VÉRIFIER sur legifrance.gouv.fr"
+  },
+  {
+    "id": "L1221-19",
+    "num_article": "L1221-19",
+    "titre_section": "Période d'essai",
+    "theme": "contrat_travail",
+    "texte": "Le contrat de travail à durée indéterminée peut comporter une période d'essai dont la durée maximale est, sauf durées plus longues fixées par accord de branche, de deux mois pour les ouvriers et employés, trois mois pour les agents de maîtrise et techniciens, quatre mois pour les cadres.",
+    "source": "Code du travail, partie législative - À VÉRIFIER sur legifrance.gouv.fr"
+  },
+  {
+    "id": "L1237-1",
+    "num_article": "L1237-1",
+    "titre_section": "Préavis de démission",
+    "theme": "contrat_travail",
+    "texte": "En l'absence de dispositions légales, la durée du préavis en cas de démission est fixée par la convention collective, le contrat de travail ou les usages de la profession.",
+    "source": "Code du travail, partie législative - À VÉRIFIER sur legifrance.gouv.fr"
+  },
+  {
+    "id": "L1234-1",
+    "num_article": "L1234-1",
+    "titre_section": "Préavis de licenciement",
+    "theme": "licenciement",
+    "texte": "Lorsque le licenciement n'est pas motivé par une faute grave, le salarié a droit à un préavis dont la durée dépend de son ancienneté : au moins deux mois pour deux ans d'ancienneté et plus, sauf dispositions conventionnelles plus favorables.",
+    "source": "Code du travail, partie législative - À VÉRIFIER sur legifrance.gouv.fr"
+  },
+  {
+    "id": "L1233-3",
+    "num_article": "L1233-3",
+    "titre_section": "Licenciement économique",
+    "theme": "licenciement",
+    "texte": "Constitue un licenciement pour motif économique le licenciement effectué par un employeur pour un ou plusieurs motifs non inhérents à la personne du salarié, résultant d'une suppression ou transformation d'emploi consécutive notamment à des difficultés économiques ou à des mutations technologiques.",
+    "source": "Code du travail, partie législative - À VÉRIFIER sur legifrance.gouv.fr"
+  },
+  {
+    "id": "L1237-11",
+    "num_article": "L1237-11",
+    "titre_section": "Rupture conventionnelle",
+    "theme": "rupture_conventionnelle",
+    "texte": "L'employeur et le salarié peuvent convenir en commun des conditions de la rupture du contrat de travail à durée indéterminée qui les lie. La rupture conventionnelle résulte d'une convention signée par les parties, garantissant la liberté du consentement des parties.",
+    "source": "Code du travail, partie législative - À VÉRIFIER sur legifrance.gouv.fr"
+  },
+  {
+    "id": "L1237-13",
+    "num_article": "L1237-13",
+    "titre_section": "Rupture conventionnelle - indemnité",
+    "theme": "rupture_conventionnelle",
+    "texte": "La convention de rupture définit les conditions de celle-ci, notamment le montant de l'indemnité spécifique de rupture conventionnelle, qui ne peut être inférieur à l'indemnité légale de licenciement.",
+    "source": "Code du travail, partie législative - À VÉRIFIER sur legifrance.gouv.fr"
+  },
+  {
+    "id": "L3231-2",
+    "num_article": "L3231-2",
+    "titre_section": "SMIC",
+    "theme": "smic",
+    "texte": "Le salaire minimum de croissance assure aux salariés dont les rémunérations sont les plus faibles la garantie de leur pouvoir d'achat et une participation au développement économique de la nation.",
+    "source": "Code du travail, partie législative - À VÉRIFIER sur legifrance.gouv.fr"
+  },
+  {
+    "id": "L1152-1",
+    "num_article": "L1152-1",
+    "titre_section": "Harcèlement moral",
+    "theme": "harcelement_discrimination",
+    "texte": "Aucun salarié ne doit subir les agissements répétés de harcèlement moral qui ont pour objet ou pour effet une dégradation de ses conditions de travail susceptible de porter atteinte à ses droits et à sa dignité, d'altérer sa santé physique ou mentale ou de compromettre son avenir professionnel.",
+    "source": "Code du travail, partie législative - À VÉRIFIER sur legifrance.gouv.fr"
+  },
+  {
+    "id": "L1132-1",
+    "num_article": "L1132-1",
+    "titre_section": "Discrimination",
+    "theme": "harcelement_discrimination",
+    "texte": "Aucune personne ne peut être écartée d'une procédure de recrutement ou de l'accès à un stage, ni sanctionnée, licenciée ou faire l'objet d'une mesure discriminatoire en raison de son origine, son sexe, son âge, sa situation de famille, son état de santé, son handicap ou toute autre caractéristique protégée par la loi.",
+    "source": "Code du travail, partie législative - À VÉRIFIER sur legifrance.gouv.fr"
+  }
+]

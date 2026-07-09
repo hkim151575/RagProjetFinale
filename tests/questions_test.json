@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Quelle est la durée légale du travail par semaine ?",
+    "article_attendu": "L3121-27"
+  },
+  {
+    "question": "Combien de jours de congés payés par mois de travail ?",
+    "article_attendu": "L3141-3"
+  },
+  {
+    "question": "Quelle est la durée maximale de la période d'essai pour un cadre ?",
+    "article_attendu": "L1221-19"
+  },
+  {
+    "question": "Comment fonctionne la rupture conventionnelle ?",
+    "article_attendu": "L1237-11"
+  },
+  {
+    "question": "Qu'est-ce que le harcèlement moral au travail ?",
+    "article_attendu": "L1152-1"
+  }
+]

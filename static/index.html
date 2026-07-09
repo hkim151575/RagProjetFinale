@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assistant Code du travail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F1EEE6;
+    --paper-deep: #E8E3D6;
+    --line: #D2CBB6;
+    --ink: #1D2B36;
+    --ink-soft: #4C5760;
+    --navy: #16324F;
+    --navy-deep: #0E2338;
+    --seal: #7B2A22;
+    --seal-soft: #F2E4DF;
+    --muted: #7A7362;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* --- En-tête façon papier à en-tête administratif --- */
+  header {
+    padding: 28px 24px 20px;
+    text-align: center;
+    border-bottom: 3px double var(--navy);
+    background: var(--paper);
+  }
+
+  header .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  header h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0;
+    color: var(--navy-deep);
+    letter-spacing: 0.01em;
+  }
+
+  header .subtitle {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  /* --- Zone de conversation --- */
+  main {
+    flex: 1;
+    max-width: 760px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px 20px 140px;
+    overflow-y: auto;
+  }
+
+  .empty-state {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 60px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .empty-state .exemples {
+    margin-top: 18px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+  }
+
+  .exemple-chip {
+    display: inline-block;
+    margin: 4px;
+    padding: 7px 14px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: white;
+    color: var(--navy);
+    cursor: pointer;
+    font-size: 12.5px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .exemple-chip:hover { border-color: var(--navy); background: var(--paper-deep); }
+
+  .message-row {
+    margin-bottom: 20px;
+    display: flex;
+  }
+  .message-row.user { justify-content: flex-end; }
+  .message-row.assistant { justify-content: flex-start; }
+
+  .bulle-user {
+    background: var(--navy);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px 8px 2px 8px;
+    max-width: 80%;
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+
+  /* --- Réponse façon document/note juridique --- */
+  .doc-card {
+    max-width: 88%;
+    background: white;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--navy);
+    border-radius: 2px;
+    padding: 16px 20px;
+  }
+
+  .doc-card .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .doc-card .corps {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--ink);
+    white-space: pre-wrap;
+  }
+
+  .sources-row {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .sources-row .sources-label {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    margin-right: 4px;
+  }
+
+  /* --- "Tampon" de citation d'article : élément signature de l'UI --- */
+  .article-stamp {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--seal);
+    border: 1px solid var(--seal);
+    background: var(--seal-soft);
+    padding: 3px 9px;
+    border-radius: 2px;
+    transform: rotate(-0.6deg);
+  }
+
+  .avertissement {
+    margin-top: 12px;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .thinking {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .thinking .dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--navy);
+    animation: pulse 1.2s infinite ease-in-out;
+  }
+  .thinking .dot:nth-child(2) { animation-delay: 0.15s; }
+  .thinking .dot:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes pulse {
+    0%, 80%, 100% { opacity: 0.25; }
+    40% { opacity: 1; }
+  }
+
+  .erreur-msg {
+    color: var(--seal);
+    font-size: 13.5px;
+    background: var(--seal-soft);
+    border: 1px solid var(--seal);
+    padding: 10px 14px;
+    border-radius: 3px;
+    max-width: 88%;
+  }
+
+  /* --- Zone de saisie fixe en bas --- */
+  .zone-saisie {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, var(--paper) 60%, rgba(241,238,230,0));
+    padding: 24px 20px 22px;
+  }
+
+  .zone-saisie form {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 6px 6px 6px 16px;
+    box-shadow: 0 2px 10px rgba(22, 50, 79, 0.06);
+  }
+
+  .zone-saisie input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14.5px;
+    color: var(--ink);
+    background: transparent;
+  }
+  .zone-saisie input::placeholder { color: var(--muted); }
+
+  .zone-saisie button {
+    background: var(--navy);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .zone-saisie button:hover { background: var(--navy-deep); }
+  .zone-saisie button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 22px; }
+    .doc-card, .bulle-user { max-width: 92%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Projet M2 MD5 — RAG</div>
+  <h1>Assistant Code du travail</h1>
+  <div class="subtitle">Réponses sourcées, article par article</div>
+</header>
+
+<main id="chat">
+  <div class="empty-state" id="empty-state">
+    Posez une question sur le droit du travail français.<br>
+    Chaque réponse cite les articles du Code du travail sur lesquels elle s'appuie.
+    <div class="exemples">
+      <span class="exemple-chip" data-q="Quelle est la durée légale du travail par semaine ?">Durée légale du travail</span>
+      <span class="exemple-chip" data-q="Combien de jours de congés payés par an ?">Congés payés</span>
+      <span class="exemple-chip" data-q="Comment fonctionne la rupture conventionnelle ?">Rupture conventionnelle</span>
+      <span class="exemple-chip" data-q="Qu'est-ce que le harcèlement moral ?">Harcèlement moral</span>
+    </div>
+  </div>
+</main>
+
+<div class="zone-saisie">
+  <form id="form-question">
+    <input type="text" id="input-question" placeholder="Ex : Quelle est la durée du préavis pour un CDI ?" autocomplete="off">
+    <button type="submit" id="btn-envoyer">Envoyer</button>
+  </form>
+</div>
+
+<script>
+  const chat = document.getElementById('chat');
+  const emptyState = document.getElementById('empty-state');
+  const form = document.getElementById('form-question');
+  const input = document.getElementById('input-question');
+  const btn = document.getElementById('btn-envoyer');
+
+  document.querySelectorAll('.exemple-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      input.value = chip.dataset.q;
+      form.dispatchEvent(new Event('submit'));
+    });
+  });
+
+  function scrollBas() {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+
+  function ajouterMessageUser(texte) {
+    if (emptyState) emptyState.remove();
+    const row = document.createElement('div');
+    row.className = 'message-row user';
+    row.innerHTML = `<div class="bulle-user"></div>`;
+    row.querySelector('.bulle-user').textContent = texte;
+    chat.appendChild(row);
+    scrollBas();
+  }
+
+  function ajouterIndicateurReflexion() {
+    const row = document.createElement('div');
+    row.className = 'message-row assistant';
+    row.id = 'indicateur-reflexion';
+    row.innerHTML = `
+      <div class="thinking">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        recherche dans le Code du travail…
+      </div>`;
+    chat.appendChild(row);
+    scrollBas();
+  }
+
+  function retirerIndicateurReflexion() {
+    const el = document.getElementById('indicateur-reflexion');
+    if (el) el.remove();
+  }
+
+  function ajouterReponse(reponse, articlesSources) {
+    const row = document.createElement('div');
+    row.className = 'message-row assistant';
+
+    let sourcesHtml = '';
+    if (articlesSources && articlesSources.length > 0) {
+      const stamps = articlesSources.map(a => `<span class="article-stamp">Art. ${escapeHtml(a)}</span>`).join('');
+      sourcesHtml = `<div class="sources-row"><span class="sources-label">Sources</span>${stamps}</div>`;
+    }
+
+    row.innerHTML = `
+      <div class="doc-card">
+        <div class="label">Réponse</div>
+        <div class="corps"></div>
+        ${sourcesHtml}
+      </div>`;
+    row.querySelector('.corps').textContent = reponse;
+    chat.appendChild(row);
+    scrollBas();
+  }
+
+  function ajouterErreur(message) {
+    const row = document.createElement('div');
+    row.className = 'message-row assistant';
+    row.innerHTML = `<div class="erreur-msg"></div>`;
+    row.querySelector('.erreur-msg').textContent = message;
+    chat.appendChild(row);
+    scrollBas();
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+
+    ajouterMessageUser(question);
+    input.value = '';
+    btn.disabled = true;
+    ajouterIndicateurReflexion();
+
+    try {
+      const res = await fetch('/api/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question })
+      });
+      const data = await res.json();
+      retirerIndicateurReflexion();
+
+      if (!res.ok) {
+        ajouterErreur(data.error || "Une erreur est survenue.");
+      } else {
+        ajouterReponse(data.reponse, data.articles_sources);
+      }
+    } catch (err) {
+      retirerIndicateurReflexion();
+      ajouterErreur("Impossible de contacter le serveur. Vérifie que main.py --web tourne bien.");
+    } finally {
+      btn.disabled = false;
+      input.focus();
+    }
+  });
+</script>
+
+</body>
+</html>
