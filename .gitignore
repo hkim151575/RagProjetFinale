@@ -1,0 +1,17 @@
+# Secrets
+.env
+
+# Base vectorielle persistée (générée localement, pas versionnée)
+db/chroma/
+
+# Corpus brut volumineux (optionnel, si tu télécharges le dump LEGI complet)
+data/raw/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
